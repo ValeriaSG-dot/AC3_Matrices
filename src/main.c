@@ -34,7 +34,7 @@ void app_main(void)
     char rx_buffer[128];
     float A[2][2], B[2][2], Res[2][2];
 
-    ESP_LOGI(TAG, "Operaciones Matriciales");
+    ESP_LOGI(TAG, "Matrix Subtraction");
 
     while (1) {
         printf("A? a11 a12 a21 a22:\n");
@@ -63,13 +63,14 @@ void app_main(void)
 
         printf("--- RESULTS ---\n");
 
-        Res[0][0] = A[0][0] + B[0][0];
-        Res[0][1] = A[0][1] + B[0][1];
-        Res[1][0] = A[1][0] + B[1][0];
-        Res[1][1] = A[1][1] + B[1][1];
+        Res[0][0] = A[0][0] - B[0][0];
+        Res[0][1] = A[0][1] - B[0][1];
+        Res[1][0] = A[1][0] - B[1][0];
+        Res[1][1] = A[1][1] - B[1][1];
 
-        print_matrix("Addition (A + B)", Res);
+        print_matrix("Subtraction (A - B)", Res);
 
         printf("====================================\n\n");
     }
 }
+
